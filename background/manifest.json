@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "Sample Chrome-Extension Background",
+  "version": "1.0",
+  "description": "Target Button Clicker",
+
+  "icons": {
+    "16": "img/icon16.png",
+    "48": "img/icon48.png",
+    "128": "img/icon128.png"
+  },
+
+  "content_scripts": [
+    {
+        "matches": [ "http://*/*", "https://*/*" ],
+        "js": [ "js/content.js" ],
+        "run_at": "document_end"
+    }
+  ],
+
+  "background": {
+    "scripts": ["js/background.js"],
+    "persistent": true
+  },
+
+  "permissions": [
+    "tabs"
+  ]
+}
